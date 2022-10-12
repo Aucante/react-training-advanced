@@ -3,20 +3,23 @@ import {useState, useEffect} from 'react'
 
 function App() {
 
-const [dataComponent, setDataComponent] = useState(1);
+  const [dataImg, setDataImg] = useState();
 
-useEffect(() => {
-  console.log("1 ch");
-}, [dataComponent])
-
-const changestate = () => {
-  setDataComponent(dataComponent + 1);
-}
+  useEffect(() => {
+    fetch('https://api.thecatapi.com/v1/images/search')
+    .then(response => {
+      console.log(response);
+      return response.json();
+    })
+    .then(data => {
+      console.log(data);
+      setDataImg(data[0].url)
+    })
+  }, [])
 
   return (
     <div className="App">
-      <h1>Le state est {dataComponent}</h1>
-      <button onClick={changestate}>Change state</button>
+      {dataImg && <img src={dataImg} alt="cat image" style={{width: "500px"}}/>}
     </div>
   );
 }
