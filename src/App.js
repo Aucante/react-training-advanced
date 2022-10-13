@@ -6,9 +6,13 @@ function App() {
   const [timer, setTimer] = useState(1);
 
   useEffect(() => {
-    setInterval(() => {
+    const intervalId = setInterval(() => {
       setTimer(timer => timer + 1);
     }, 1000)
+
+    return () => {
+      clearInterval(intervalId);
+    }
   }, [])
 
   return (
