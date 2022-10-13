@@ -1,5 +1,5 @@
 
-import {useState, useEffect} from 'react'
+import {useState, useEffect, Fragment} from 'react'
 
 function Timer() {
 
@@ -17,9 +17,11 @@ function Timer() {
 
 
   return (
-    <div className="App">
+    <Fragment>
       <h1>{timer}</h1>
-    </div>
+      <h1>{timer}</h1>
+      <h1>{timer}</h1>
+    </Fragment>
   );
 }
 
