@@ -6,21 +6,32 @@ function App() {
 
   const [toggle, setToggle] = useState(false);
 
-  const ref = useRef();
-
-  console.log(ref);
+  const ref = useRef([]);
 
   useEffect(() => {
-    console.log(ref.current);
+    console.log(ref);
   }, [])
+  
 
   const toggleFunc = () => {
     setToggle(!toggle);
   }
 
+  const addToRef = el => {
+    if(el && !ref.current.includes(el)){
+      ref.current.push(el);
+    }
+  }
+
   return (
     <div className="App">
-      <video ref={ref} width="750" height="500" autoPlay controls muted>
+      <video ref={addToRef} width="750" height="500" autoPlay controls muted>
+        <source src={Video} type='video/mp4'/>
+      </video>
+      <video ref={addToRef} width="750" height="500" autoPlay controls muted>
+        <source src={Video} type='video/mp4'/>
+      </video>
+      <video ref={addToRef} width="750" height="500" autoPlay controls muted>
         <source src={Video} type='video/mp4'/>
       </video>
       
