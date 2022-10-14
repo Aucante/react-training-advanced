@@ -9,7 +9,15 @@ function App() {
   const ref = useRef([]);
 
   useEffect(() => {
-    console.log(ref);
+    window.addEventListener('resize', actionResize);
+
+    function actionResize(){
+      console.log("Resized");
+    }
+
+    return () => {
+      window.removeEventListener('resize', actionResize)
+    }
   }, [])
   
 
