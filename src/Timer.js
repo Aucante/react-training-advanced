@@ -17,11 +17,9 @@ function Timer() {
 
 
   return (
-    <Fragment>
+    <>
       <h1>{timer}</h1>
-      <h1>{timer}</h1>
-      <h1>{timer}</h1>
-    </Fragment>
+    </>
   );
 }
 
