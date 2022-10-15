@@ -1,6 +1,6 @@
 import './App.css';
 import {useState} from 'react'
-import Video from './video.mp4'
+import Content from './Content'
 
 function App() {
 
@@ -14,7 +14,14 @@ function App() {
 
   return (
     <div className="App">
-      <h1>{toggle}</h1>
+      <Content>
+        <h1>Titre de mon article 1</h1>
+        <p>lorem ipsum</p>
+      </Content>
+      <Content>
+        <h1>Titre de mon article 2</h1>
+        <p>lorem ipsum</p>
+      </Content>
       
       <button onClick={toggleFunc}>Toggle</button>
     </div>
