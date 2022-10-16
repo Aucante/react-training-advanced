@@ -1,5 +1,5 @@
 import './App.css';
-import {useState} from 'react'
+import {useState, useCallback} from 'react'
 import Content from './Content'
 
 function App() {
@@ -14,14 +14,7 @@ function App() {
 
   return (
     <div className="App">
-      <Content>
-        <h1>Titre de mon article 1</h1>
-        <p>lorem ipsum</p>
-      </Content>
-      <Content>
-        <h1>Titre de mon article 2</h1>
-        <p>lorem ipsum</p>
-      </Content>
+      <Content />
       
       <button onClick={toggleFunc}>Toggle</button>
     </div>
