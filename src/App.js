@@ -11,7 +11,6 @@ function App() {
     setToggle(toggle + 1);
   }
 
-
   return (
     <div className="App">
       <Content />
