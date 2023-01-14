@@ -15,7 +15,6 @@ function App() {
     <div className="App">
       <Content />
       <button onClick={toggleFunc}>Toggle</button>
-      <button onClick={toggleFunc}>Toggle</button>
     </div>
   );
 }
